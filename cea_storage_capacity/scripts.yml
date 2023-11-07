@@ -13,6 +13,7 @@ Storage:
                  "storage-potential:maximum-discharge",
                  "storage-potential:conversion-efficiency",
                  "storage-potential:calculate-performance-sc",
+                 #"storage-potential:collector-type",
                  "storage-potential:sc-potential-used",
                  "storage-potential:water-capacity",
                  "storage-potential:heat-capacity",
@@ -21,12 +22,11 @@ Storage:
                  "storage-potential:max-temperature",
                  "storage-potential:loss-coefficient",
                  "storage-potential:calculate-performance-h2",
-                 "storage-potential:h2-conversion-efficiency",
-                 "storage-potential:energy-density",
+                 "storage-potential:h2-energy-density",
+                 "storage-potential:electrolyzer-efficiency",
+                 "storage-potential:compressor-requirement",
                  "storage-potential:tank-capacity",
-                 "storage-potential:fuel-economy",
-                 "storage-potential:vehicle-km-travelled",
-                 "storage-potential:carbon-emissions"]
+                 "storage-potential:fuel-cell-efficiency"]
     input-files:
       - [get_total_demand]
       - [PV_total_buildings]

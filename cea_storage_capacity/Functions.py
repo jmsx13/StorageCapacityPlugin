@@ -39,7 +39,7 @@ def add(data):
 def normalize_list(data):
     lista = []
     for n in data:
-        if n > 0: lista.append(n)
+        if n > 0: lista.append(round(n,3))
         else: lista.append('0.0')
     return lista
 

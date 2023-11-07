@@ -416,28 +416,56 @@ building_data_h2:
           unit: '[MWh/yr]'
           values: '{0.0...n}'
           plot-color: blue
-        h2_produced_Kg:
+        H2_produced_Kg:
           description: Amount of hydrogen produced by the process (kg).
           type: float
           min: 0.0
           unit: '[MWh/yr]'
           values: '{0.0...n}'
           plot-color: green
-        o2_produced_Kg:
+        H2_stored_kg:
           description: Amount of oxygen produced by the process (kg).
           type: float
           min: 0.0
           unit: '[MWh/yr]'
           values: '{0.0...n}'
           plot-color: yellow
-        h2o_needed_Kg:
+        H2_demand_kg:
           description: Amount of water (H2O) required for the process (kg).
           type: float
           min: 0.0
           unit: '[MWh/yr]'
           values: '{0.0...n}'
           plot-color: green
-        co2_avoided_Kg:
+        FC_supply_kWh:
+          description: Amount of CO2 equivalent emissions release into the environment (kg).
+          type: float
+          min: 0.0
+          unit: '[MWh/yr]'
+          values: '{0.0...n}'
+          plot-color: grey
+        E_bgt_fc_kWh:
+          description: Amount of CO2 equivalent emissions release into the environment (kg).
+          type: float
+          min: 0.0
+          unit: '[MWh/yr]'
+          values: '{0.0...n}'
+          plot-color: grey
+        E_sld_fc_kWh:
+          description: Amount of CO2 equivalent emissions release into the environment (kg).
+          type: float
+          min: 0.0
+          unit: '[MWh/yr]'
+          values: '{0.0...n}'
+          plot-color: grey
+        El_loss_kWh:
+          description: Amount of CO2 equivalent emissions release into the environment (kg).
+          type: float
+          min: 0.0
+          unit: '[MWh/yr]'
+          values: '{0.0...n}'
+          plot-color: grey
+        FC_loss_kWh:
           description: Amount of CO2 equivalent emissions release into the environment (kg).
           type: float
           min: 0.0

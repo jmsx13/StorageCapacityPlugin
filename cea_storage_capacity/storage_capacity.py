@@ -12,7 +12,7 @@ import cea_storage_capacity.H2_Tank as h2p
 
 __author__ = "Jaime Cevallos-Sierra"
 __copyright__ = "Copyright 2022, IN+ - Instituto Superior Técnico"
-__credits__ = ['IN+ - Instituto Superior Técnico/Jaime Cevallos-Sierra']
+__credits__ = ['IN+ - Instituto Superior Técnico / Jaime Cevallos-Sierra']
 __maintainer__ = "Jaime Cevallos-Sierra"
 __email__ = "jaime.cevallos@tecnico.ulisboa.pt / jmsx13@gmail.com"
 __status__ = "Production"
@@ -52,22 +52,16 @@ def main(config):
 
     if config.storage_potential.calculate_performance_h2:
         locator3 = cea.inputlocator.InputLocator(config.scenario, config.plugins)
-        if config.storage_potential.calculate_performance_pb:
-            summary_h2 = h2p.hydrogen_production(locator3.get_total_demand.read(), locator3.get_input_folder(),
-                                                 config.storage_potential.h2_conversion_efficiency,
-                                                 config.storage_potential.energy_density,
-                                                 config.storage_potential.tank_capacity,
-                                                 config.storage_potential.fuel_economy,
-                                                 config.storage_potential.vehicle_km_travelled,
-                                                 config.storage_potential.carbon_emissions, True)
-        else:
-            summary_h2 = h2p.hydrogen_production(locator3.get_total_demand.read(), locator3.get_input_folder(),
-                                                 config.storage_potential.h2_conversion_efficiency,
-                                                 config.storage_potential.energy_density,
-                                                 config.storage_potential.tank_capacity,
-                                                 config.storage_potential.fuel_economy,
-                                                 config.storage_potential.vehicle_km_travelled,
-                                                 config.storage_potential.carbon_emissions, False)
+
+        if config.storage_potential.calculate_performance_pb: case = True
+        else: case = False
+
+        summary_h2 = h2p.hydrogen_production(locator3.get_total_demand.read(), locator3.get_input_folder(),
+                                             config.storage_potential.h2_energy_density,
+                                             config.storage_potential.electrolyzer_efficiency,
+                                             config.storage_potential.fuelcell_efficiency,
+                                             config.storage_potential.compressor_requirement,
+                                             config.storage_potential.tank_capacity, case)
         locator3.hydrogen_production.write(summary_h2)
 
     pass
